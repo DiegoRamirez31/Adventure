@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dbAventurasModelStoreContainer" CdmEntityContainer="dbAventurasEntities">
+    <EntitySetMapping Name="tbComentarios">
+      <EntityTypeMapping TypeName="dbAventurasModel.tbComentarios">
+        <MappingFragment StoreEntitySet="tbComentarios">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_foto" ColumnName="id_foto" />
+          <ScalarProperty Name="id_user" ColumnName="id_user" />
+          <ScalarProperty Name="comentario" ColumnName="comentario" />
+          <ScalarProperty Name="fechaCreado" ColumnName="fechaCreado" />
+          <ScalarProperty Name="titulo" ColumnName="titulo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbFotos">
+      <EntityTypeMapping TypeName="dbAventurasModel.tbFotos">
+        <MappingFragment StoreEntitySet="tbFotos">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+          <ScalarProperty Name="fechaModificacion" ColumnName="fechaModificacion" />
+          <ScalarProperty Name="titulo" ColumnName="titulo" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="pathFoto" ColumnName="pathFoto" />
+          <ScalarProperty Name="id_user" ColumnName="id_user" />
+          <ScalarProperty Name="favorito" ColumnName="favorito" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbRoles">
+      <EntityTypeMapping TypeName="dbAventurasModel.tbRoles">
+        <MappingFragment StoreEntitySet="tbRoles">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbUsuarios">
+      <EntityTypeMapping TypeName="dbAventurasModel.tbUsuarios">
+        <MappingFragment StoreEntitySet="tbUsuarios">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="id_rol" ColumnName="id_rol" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

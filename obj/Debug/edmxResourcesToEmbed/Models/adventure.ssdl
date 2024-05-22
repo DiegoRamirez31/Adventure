@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbAventurasModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tbComentarios">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_foto" Type="int" Nullable="false" />
+    <Property Name="id_user" Type="int" Nullable="false" />
+    <Property Name="comentario" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="fechaCreado" Type="date" Nullable="false" />
+    <Property Name="titulo" Type="nvarchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbFotos">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fechaCreacion" Type="date" Nullable="false" />
+    <Property Name="fechaModificacion" Type="date" Nullable="false" />
+    <Property Name="titulo" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="descripcion" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="pathFoto" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="id_user" Type="int" Nullable="false" />
+    <Property Name="favorito" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbRoles">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descripcion" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbUsuarios">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="password" Type="nvarchar" MaxLength="8" Nullable="false" />
+    <Property Name="id_rol" Type="int" Nullable="false" />
+    <Property Name="estado" Type="bit" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_tbComentarios_tbFotos">
+    <End Role="tbFotos" Type="Self.tbFotos" Multiplicity="1" />
+    <End Role="tbComentarios" Type="Self.tbComentarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbFotos">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbComentarios">
+        <PropertyRef Name="id_foto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbComentarios_tbUsuarios">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="1" />
+    <End Role="tbComentarios" Type="Self.tbComentarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbComentarios">
+        <PropertyRef Name="id_user" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbFotos_tbUsuarios">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="1" />
+    <End Role="tbFotos" Type="Self.tbFotos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbFotos">
+        <PropertyRef Name="id_user" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbUsuarios_tbRoles">
+    <End Role="tbRoles" Type="Self.tbRoles" Multiplicity="1" />
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbRoles">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbUsuarios">
+        <PropertyRef Name="id_rol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="dbAventurasModelStoreContainer">
+    <EntitySet Name="tbComentarios" EntityType="Self.tbComentarios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbFotos" EntityType="Self.tbFotos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbRoles" EntityType="Self.tbRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbUsuarios" EntityType="Self.tbUsuarios" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_tbComentarios_tbFotos" Association="Self.FK_tbComentarios_tbFotos">
+      <End Role="tbFotos" EntitySet="tbFotos" />
+      <End Role="tbComentarios" EntitySet="tbComentarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbComentarios_tbUsuarios" Association="Self.FK_tbComentarios_tbUsuarios">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbComentarios" EntitySet="tbComentarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbFotos_tbUsuarios" Association="Self.FK_tbFotos_tbUsuarios">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbFotos" EntitySet="tbFotos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbUsuarios_tbRoles" Association="Self.FK_tbUsuarios_tbRoles">
+      <End Role="tbRoles" EntitySet="tbRoles" />
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

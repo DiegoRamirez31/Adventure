@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Adventure_MVC.Models.tbUsuarios>
+
+@{
+    ViewBag.Title = "index";
+}
+
+<h2 style="text-align: center">Listado de Usuarios</h2>
+
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>
+            Usuario
+        </th>
+        <th>
+            Estado
+        </th>
+        <th>
+            Rol
+        </th>
+        <th>Opcion</th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.username)
+    </td>
+
+    @if (item.estado == true)
+    {
+        <td>Activo</td>
+    }
+    else
+    {
+        <td>Inactivo</td>
+    }
+
+    <td>
+        @Html.DisplayFor(modelItem => item.tbRoles.descripcion)
+    </td>
+    <td>
+        @Html.ActionLink("Editar", "Edit", new { id = item.id }, new { @class = "btn btn-primary" })
+    </td>
+</tr>
+}
+
+</table>

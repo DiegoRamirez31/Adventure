@@ -1,0 +1,110 @@
+.image-info {
+    max-width: 600px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    position: relative; /* Añadido para posicionar el botón */
+}
+
+    .image-info h2 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .image-info p {
+        font-size: 16px;
+        margin: 5px 0;
+    }
+
+.delete-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+
+
+/*-- Para Formulario --*/
+#formularioContainer {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background-color: white; /* Cambiando el color de fondo a blanco */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Agregando una sombra */
+}
+
+#formularioContainer label {
+    color: black; /* Cambiando el color de la letra de las etiquetas a negro */
+}
+
+#mostrarFormulario {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+#formularioContainer #formulario #btnCancelar {
+    border-radius: 4px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+#formularioContainer #formulario #btnEnviar {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+#formulario label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#formulario input[type="text"],
+#formulario textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#formulario input[type="submit"],
+#btnCancelar {
+    width: auto;
+}

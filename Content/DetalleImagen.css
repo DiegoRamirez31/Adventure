@@ -1,0 +1,36 @@
+.contenedor-imagenes {
+    display: flex;
+    justify-content: center;
+}
+
+    .contenedor-imagenes .imagen {
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 20px;
+        width: 50%;
+        background-color: #f9f9f9;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .contenedor-imagenes .imagen h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 24px;
+    }
+
+    .contenedor-imagenes .imagen img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .contenedor-imagenes .imagen p {
+        font-size: 16px;
+        margin-bottom: 10px;
+        text-align: center;
+    }

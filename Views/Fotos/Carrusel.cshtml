@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Adventure_MVC.Models.tbFotos>
+
+@{
+    ViewBag.Title = "Carrusel";
+}
+
+<div id="carrusel">
+    <div class="carousel-inner">
+        @foreach (var foto in Model)
+        {
+            <div class="panel">
+                <div class="image-container">
+                    <img src="@Url.Content("~/Images/" + foto.pathFoto)" alt="@foto.pathFoto" />
+                </div>
+                <div class="image-footer">
+                    <label><strong>Título:</strong> @foto.titulo</label>
+                    <label><strong>Descripción:</strong> @foto.descripcion</label>
+                </div>
+            </div>
+        }
+    </div>
+</div>
