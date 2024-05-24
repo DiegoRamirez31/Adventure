@@ -6,6 +6,14 @@
 
 
 <h3>Crear Usuario</h3>
+
+@if (ViewBag.error != null)
+{
+    <div class="label-danger form-control">
+        <p>@ViewBag.error</p>
+    </div>
+} 
+
 <form action="/Usuarios/Save" method="get">
     @Html.AntiForgeryToken()
     <div class="form-group">
@@ -40,9 +48,9 @@
         </select>
     </div>
     <div class="form-group">
-        
-            <input type="submit" value="Guardar" class="btn btn-success" />
-            <button class="btn btn-default">@Html.ActionLink("Cancelar", "Index", "Home")</button>
-        
+
+        <input type="submit" value="Guardar" class="btn btn-success" />
+        <button class="btn btn-default">@Html.ActionLink("Cancelar", "Index", "Home")</button>
+
     </div>
 </form>

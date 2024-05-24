@@ -56,7 +56,10 @@ namespace Adventure_MVC.Controllers
                         if ( auxUser != null)
                         {
                             /*-- Usuario ya Existe --*/
-                            return RedirectToAction("Create", "Usuario");
+
+                            ViewBag.error = "Usuario: " + auxUser.username + " Ya Existe";
+                            ViewBag.listaRoles = new SelectList(dbEntities.tbRoles, "id", "descripcion");
+                            return View("NuevoUsuario");
                         }
 
                         /*--- Encriptar Password ---*/
