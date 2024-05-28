@@ -17,6 +17,7 @@ namespace Adventure_MVC.Controllers
     public class FotosController : Controller
     {
         private dbAventurasEntities dbEntities = new dbAventurasEntities();
+        
         // GET: Fotos
         public ActionResult Index()
         {
