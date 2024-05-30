@@ -2,15 +2,17 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    width: 60%;
 }
 
 .listaImagenes .imagen {
     border: 2px solid #ccc;
     padding: 20px;
     margin-bottom: 20px;
-    width: calc(30% - 40px); /* Restando el padding */
+    /*width: calc(30% - 40px); /* Restando el padding */
     box-sizing: border-box;
     background-color: #f9f9f9;
+    width: 20%;
 }
 
 .listaImagenes .imagen h2 {

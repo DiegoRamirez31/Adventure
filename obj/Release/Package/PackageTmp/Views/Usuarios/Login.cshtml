@@ -1,0 +1,32 @@
+﻿@model Adventure_MVC.Models.tbUsuarios
+
+@{
+    ViewBag.Title = "Login";
+}
+
+
+<h3>Inicio de Sesion</h3>
+
+@if ( ViewBag.error != null) { 
+    <div class="label-danger form-control">
+        <p>@ViewBag.error</p>
+    </div>
+}
+
+<form action="/Usuarios/Login" method="get">
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        <label class="control-label">Usuario</label>
+        <input type="text" name="username" id="username" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label class="control-label">Password</label>
+        <input type="password" name="password" id="password" class="form-control" />
+    </div>
+    <div class="form-group">
+
+        <input type="submit" value="Aceptar" class="btn btn-success" />
+        <button class="btn btn-default">@Html.ActionLink("Cancelar", "Index", "Home")</button>
+
+    </div>
+</form>

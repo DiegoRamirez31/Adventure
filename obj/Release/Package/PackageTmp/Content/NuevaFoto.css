@@ -1,0 +1,33 @@
+﻿#nuevaFoto {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+}
+
+    #nuevaFoto .panel {
+        flex: 0 0 45%;
+        border: 1px solid #ccc;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    /* Estilos adicionales para resaltar los bordes */
+    #nuevaFoto #formularioPanel {
+        margin-right: 20px;
+    }
+
+    #nuevaFoto #imagenPanel {
+        position: relative;
+        overflow: hidden;
+        border-radius: 20px;
+    }
+
+        /* Estilos adicionales para la imagen */
+        #nuevaFoto #imagenPanel img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }

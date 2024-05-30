@@ -1,0 +1,24 @@
+﻿@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/Content/Error.css" />
+    <title>Error</title>
+</head>
+<body>
+    <div id="errores" class="error-container">
+        <h1>Error</h1>
+        <p>@ViewBag.ErrorMessage</p>
+
+        <p><strong><em>@Html.ActionLink("Inicio", "Index", "Home")</em></strong></p>
+    </div>
+</body>
+</html>
+
+

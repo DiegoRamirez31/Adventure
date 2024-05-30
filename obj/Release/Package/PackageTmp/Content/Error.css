@@ -1,0 +1,24 @@
+﻿#errores {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+    #errores .error-container {
+        width: 80%;
+        max-width: 600px;
+        margin: 50px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #errores h1 {
+        color: #dc3545;
+    }
+
+    #errores p {
+        margin-top: 20px;
+    }

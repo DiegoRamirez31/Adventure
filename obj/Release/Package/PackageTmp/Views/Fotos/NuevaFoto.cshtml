@@ -1,0 +1,45 @@
+﻿@model Adventure_MVC.Models.tbFotos
+
+@{
+    ViewBag.Title = "Upload";
+}
+
+<h2>Subiendo Nueva Imagen</h2>
+
+<div id="nuevaFoto" class="panel-container">
+    <div id="formularioPanel" class="panel formulario-panel">
+        <form action="@Url.Action("Guardar", "Fotos")" method="post" enctype="multipart/form-data" id="nuevaFotoForm">
+            @Html.AntiForgeryToken()
+
+            <div class="form-group">
+                <label for="titulo" class="control-label">Título</label>
+                <input type="text" id="titulo" name="titulo" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="descripcion" class="control-label">Descripción</label>
+                <textarea id="descripcion" name="descripcion" class="form-control"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="pathFoto" class="control-label">Seleccione imagen</label>
+                <input type="file" id="pathFoto" name="pathFoto" class="form-control" accept="image/*">
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" id="favorito" name="favorito"> Favorito
+                </label>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Guardar</button>
+                @Html.ActionLink("Cancelar", "Index", "Fotos", null, htmlAttributes: new { @class = "btn btn-default" })
+            </div>
+        </form>
+    </div>
+
+    <div id="imagenPanel" class="panel imagen-panel">
+        <img id="vistaPreviaFoto" src="#" alt="Vista Previa" style="display: none;">
+    </div>
+</div>
