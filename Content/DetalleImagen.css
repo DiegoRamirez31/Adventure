@@ -1,36 +1,90 @@
+/* Estilos para el contenedor principal */
 .contenedor-imagenes {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    width: 100%;
+    overflow: hidden;
+    max-height: 650px;
 }
 
     .contenedor-imagenes .imagen {
-        border: 2px solid #ccc;
-        border-radius: 10px;
+        flex: 0 0 calc(50% - 20px);
+        max-width: calc(50% - 20px);
         padding: 20px;
-        margin-bottom: 20px;
-        width: 50%;
-        background-color: #f9f9f9;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .contenedor-imagenes .imagen h2 {
-        text-align: center;
-        margin-bottom: 20px;
-        font-size: 24px;
-    }
-
-    .contenedor-imagenes .imagen img {
-        max-width: 100%;
-        height: auto;
-        display: block;
-        margin: 0 auto;
-        margin-bottom: 20px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
         border-radius: 10px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
-    .contenedor-imagenes .imagen p {
-        font-size: 16px;
-        margin-bottom: 10px;
-        text-align: center;
+        .contenedor-imagenes .imagen h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .contenedor-imagenes .imagen img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        .contenedor-imagenes .imagen p {
+            font-size: 16px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+    .contenedor-imagenes .comentarios {
+        flex: 0 0 calc(50% - 20px);
+        max-width: calc(50% - 20px);
+        padding: 20px;
+        box-sizing: border-box;
+        overflow-y: auto;
     }
+
+        .contenedor-imagenes .comentarios h3 {
+            justify-content: center;
+            text-align: center;
+        }
+
+.comentarios .image-info {
+    font-size: 16px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    transition: transform 0.3s;
+}
+
+    .comentarios .image-info:last-child {
+        border-bottom: none;
+    }
+
+    .comentarios .image-info:hover {
+        transform: scale(1.05);
+    }
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 480px) {
+    .contenedor-imagenes {
+        flex-direction: column;
+        align-items: center;
+        max-height: none;
+        overflow: visible;
+    }
+
+        .contenedor-imagenes .imagen,
+        .contenedor-imagenes .comentarios {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .contenedor-imagenes .comentarios {
+            max-height: none;
+            overflow-y: visible;
+            width: 100%; /* Ajuste para que los comentarios abarquen el ancho completo */
+            padding: 0px;
+            margin: 0px;
+        }
+}
