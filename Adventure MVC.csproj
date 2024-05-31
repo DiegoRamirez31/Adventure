@@ -243,6 +243,7 @@
     <Content Include="Content\DetalleImagen.css" />
     <Content Include="Content\Error.css" />
     <Content Include="Content\ListaImagenes.css" />
+    <Content Include="Content\menu-responsive.css" />
     <Content Include="Content\NuevaFoto.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
