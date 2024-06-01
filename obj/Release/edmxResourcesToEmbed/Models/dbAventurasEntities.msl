@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="dbAventurasModelStoreContainer" CdmEntityContainer="dbAventurasEntities">
+  <EntityContainerMapping StorageEntityContainer="dbAventurasModelStoreContainer" CdmEntityContainer="dbAventurasEntities1">
     <EntitySetMapping Name="tbComentarios">
       <EntityTypeMapping TypeName="dbAventurasModel.tbComentarios">
         <MappingFragment StoreEntitySet="tbComentarios">
@@ -10,6 +10,15 @@
           <ScalarProperty Name="comentario" ColumnName="comentario" />
           <ScalarProperty Name="fechaCreado" ColumnName="fechaCreado" />
           <ScalarProperty Name="titulo" ColumnName="titulo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbFavoritos">
+      <EntityTypeMapping TypeName="dbAventurasModel.tbFavoritos">
+        <MappingFragment StoreEntitySet="tbFavoritos">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_foto" ColumnName="id_foto" />
+          <ScalarProperty Name="id_user" ColumnName="id_user" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -42,15 +51,6 @@
           <ScalarProperty Name="password" ColumnName="password" />
           <ScalarProperty Name="id_rol" ColumnName="id_rol" />
           <ScalarProperty Name="estado" ColumnName="estado" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tbFavoritos">
-      <EntityTypeMapping TypeName="dbAventurasModel.tbFavoritos">
-        <MappingFragment StoreEntitySet="tbFavoritos">
-          <ScalarProperty Name="id_user" ColumnName="id_user" />
-          <ScalarProperty Name="id_foto" ColumnName="id_foto" />
-          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

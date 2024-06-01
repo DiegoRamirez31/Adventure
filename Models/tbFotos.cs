@@ -31,8 +31,8 @@ namespace Adventure_MVC.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbComentarios> tbComentarios { get; set; }
-        public virtual tbUsuarios tbUsuarios { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbFavoritos> tbFavoritos { get; set; }
+        public virtual tbUsuarios tbUsuarios { get; set; }
     }
 }

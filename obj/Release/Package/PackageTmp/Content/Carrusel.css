@@ -1,4 +1,6 @@
-﻿#carrusel {
+﻿/* Estilos originales */
+
+#carrusel {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -58,3 +60,16 @@
             padding: 0;
             line-height: 1.2; /* Adjust line height for better vertical alignment */
         }
+
+/* Media query para pantallas más pequeñas */
+
+@media screen and (max-width: 480px) {
+    body {
+        margin: 0; /* Eliminar cualquier margen adicional en dispositivos móviles */
+    }
+
+    #carrusel .panel {
+        width: 100%;
+        margin: 10px 0;
+    }
+}

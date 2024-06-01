@@ -2,72 +2,68 @@
 
 @{
     ViewBag.Title = "Detalles";
-    
 }
-
-<h2 class="page-header panel" style="text-align: center;">Detalle</h2>
-
 
 <div class="contenedor-imagenes">
     <div class="imagen">
         <h2>@Model.titulo</h2>
-        <img src="@Url.Content("~/Images/" + @Model.pathFoto )" alt="@Model.pathFoto" />
+        <img src="@Url.Content("~/Images/" + @Model.pathFoto)" alt="@Model.pathFoto" />
         <p><strong>Creado por:</strong> @Model.tbUsuarios.username</p>
         <p><strong>Fecha de creación:</strong> @Model.fechaCreacion.ToString("dd/MM/yyyy")</p>
         <p><strong>Fecha de modificación:</strong> @Model.fechaModificacion.ToString("dd/MM/yyyy")</p>
-        <p><strong>Descripcion:</strong> @Model.descripcion</p>
+        <p><strong>Descripción:</strong> @Model.descripcion</p>
         @if (Request.Cookies["MiCookie"] != null)
         {
-            if ( ViewBag.favorito == null )
+            if (ViewBag.favorito == null)
             {
                 <p><strong><em>@Html.ActionLink("Agregar a Favoritos", "AddFavorito", "Fotos", new { idFoto = Model.id }, null)</em></strong></p>
             }
             else
             {
-                <p><em>Esta imagen ha Sido Agregada a Favoritos</em></p>
+                <p><em>Esta imagen ha sido agregada a Favoritos</em></p>
             }
         }
     </div>
-</div>
 
-
-
-<h3 class="" style="justify-content: center;">Comentarios</h3>
-
-@foreach ( var comentario in ViewBag.listaComentarios)
-{
-<div class="image-info">
-    @if (Request.Cookies["MiCookie"] != null)
-    {
-        if (Request.Cookies["MiCookie"]["idUser"] == comentario.id_user.ToString() || Request.Cookies["MiCookie"]["idRol"] == "1")
-        {
-            @Html.ActionLink("Eliminar", "Eliminar", "Comentarios", new { id_comentario = comentario.id }, new { @class = "delete-button" })
+    <div class="comentarios">
+        <h3 class="" style="justify-content: center;">Comentarios</h3>
+        @foreach (var comentario in ViewBag.listaComentarios)
+            {
+            <div class="image-info">
+            
+                    @if (Request.Cookies["MiCookie"] != null)
+                    {
+                        if (Request.Cookies["MiCookie"]["idUser"] == comentario.id_user.ToString() || Request.Cookies["MiCookie"]["idRol"] == "1")
+                        {
+                            @Html.ActionLink("Eliminar", "Eliminar", "Comentarios", new { id_comentario = comentario.id }, new { @class = "delete-button" })
+                        }
+                    }
+                    <p><strong><em>De:</em></strong><em> @comentario.tbUsuarios.username</em></p>
+                    <p><strong><em>Título:</em></strong><em> @comentario.titulo</em></p>
+                    <p><strong><em>Comentario:</em></strong><em> @comentario.comentario</em></p>
+            
+            </div>
         }
-    }
-    <p><strong><em>De:</em></strong><em> @comentario.tbUsuarios.username</em></p>
-    <p><strong><em>Título:</em></strong><em> @comentario.titulo</em></p>
-    <p><strong><em>Comentario:</em></strong><em> @comentario.comentario</em></p>
-</div>
-}
 
+        @if (Request.Cookies["MiCookie"] != null)
+        {
+            <button id="mostrarFormulario">Agregar Comentario</button>
+        }
 
-@if ( Request.Cookies["MiCookie"] != null )
-{
-    <button id="mostrarFormulario">Agregar Comentario</button>
-}
+        <div id="formularioContainer" style="display: none">
+            @using (Html.BeginForm("Save", "Comentarios", FormMethod.Post, new { id = "formulario" }))
+            {
+                @Html.AntiForgeryToken()
+                <label for="titulo">Título:</label><br>
+                <input type="text" id="titulo" name="titulo" required><br><br>
+                <input type="hidden" id="id_foto" name="id_foto" value="@Model.id" />
 
-<div id="formularioContainer" style="display: none">
-    @using (Html.BeginForm("Save", "Comentarios", FormMethod.Post, new { id = "formulario" }))
-    { 
-        @Html.AntiForgeryToken()
-        <label for="titulo">Título:</label><br>
-        <input type="text" id="titulo" name="titulo" required><br><br>
-        <input type="hidden" id="id_foto" name="id_foto" value="@Model.id" />
+                <label for="comentario">Comentario:</label><br>
+                <textarea id="comentario" name="comentario" rows="4" cols="50" required></textarea><br><br>
 
-        <label for="comentario">Comentario:</label><br>
-        <textarea id="comentario" name="comentario" rows="4" cols="50" required></textarea><br><br>
-
-        <input id="btnEnviar" type="submit" value="Guardar">
-        <button id="btnCancelar" class="btn btn-default">Cancelar</button>
-    }
+                <input id="btnEnviar" type="submit" value="Guardar">
+                <button id="btnCancelar" class="btn btn-default">Cancelar</button>
+            }
+        </div>
+    </div>
 </div>

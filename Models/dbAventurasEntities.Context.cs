@@ -13,10 +13,10 @@ namespace Adventure_MVC.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class dbAventurasEntities : DbContext
+    public partial class dbAventurasEntities1 : DbContext
     {
-        public dbAventurasEntities()
-            : base("name=dbAventurasEntities")
+        public dbAventurasEntities1()
+            : base("name=dbAventurasEntities1")
         {
         }
     
@@ -26,9 +26,9 @@ namespace Adventure_MVC.Models
         }
     
         public virtual DbSet<tbComentarios> tbComentarios { get; set; }
+        public virtual DbSet<tbFavoritos> tbFavoritos { get; set; }
         public virtual DbSet<tbFotos> tbFotos { get; set; }
         public virtual DbSet<tbRoles> tbRoles { get; set; }
         public virtual DbSet<tbUsuarios> tbUsuarios { get; set; }
-        public virtual DbSet<tbFavoritos> tbFavoritos { get; set; }
     }
 }

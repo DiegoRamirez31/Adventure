@@ -1,0 +1,57 @@
+﻿/* Estilos para hacer el menú responsive */
+@media (max-width: 768px) {
+    #main-navbar .navbar-collapse {
+        background-color: #333;
+        overflow-y: auto;
+        max-height: 90%;
+    }
+
+        #main-navbar .navbar-collapse ul {
+            padding: 0;
+            margin: 0;
+        }
+
+            #main-navbar .navbar-collapse ul li {
+                display: block;
+                text-align: center;
+            }
+
+                #main-navbar .navbar-collapse ul li a {
+                    display: block;
+                    padding: 10px;
+                    color: #fff;
+                }
+
+                    #main-navbar .navbar-collapse ul li a:hover {
+                        background-color: #555;
+                    }
+
+                #main-navbar .navbar-collapse ul li:not(:last-child) {
+                    border-bottom: 1px solid #777;
+                }
+
+    #main-navbar .navbar-collapse {
+        display: none; /* Ocultar el menú por defecto en pantallas pequeñas */
+    }
+
+    #main-navbar .navbar-header {
+        float: none; /* Restablecer la flotación para el contenido del encabezado */
+    }
+
+    #main-navbar .navbar-toggle {
+        display: block; /* Mostrar el botón de alternar menú */
+    }
+
+    #main-navbar .navbar-nav {
+        float: none !important; /* Restablecer la flotación de los elementos de la barra de navegación */
+        margin: 7.5px -15px; /* Corregir el margen para evitar superposición */
+    }
+
+        #main-navbar .navbar-nav > li {
+            float: none; /* Restablecer la flotación de los elementos del menú */
+        }
+
+    #main-navbar .collapse.in {
+        display: block !important; /* Mostrar el menú desplegable cuando está activo */
+    }
+}

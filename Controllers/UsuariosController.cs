@@ -15,7 +15,7 @@ namespace Adventure_MVC.Controllers
 {
     public class UsuariosController : Controller
     {
-        private dbAventurasEntities dbEntities = new dbAventurasEntities();
+        private dbAventurasEntities1 dbEntities = new dbAventurasEntities1();
 
         // GET: Usuarios
         public ActionResult Index()

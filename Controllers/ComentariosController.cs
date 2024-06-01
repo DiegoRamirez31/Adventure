@@ -12,7 +12,7 @@ namespace Adventure_MVC.Controllers
 {
     public class ComentariosController : Controller
     {
-        private dbAventurasEntities dbEntitis = new dbAventurasEntities();
+        private dbAventurasEntities1 dbEntitis = new dbAventurasEntities1();
 
         [HttpPost]
         [ValidateAntiForgeryToken]

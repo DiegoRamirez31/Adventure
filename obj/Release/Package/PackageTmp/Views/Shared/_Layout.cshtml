@@ -1,4 +1,4 @@
-﻿@{ 
+﻿@{
     // Se Creo para Prueba General
     //var cookie = Request.Cookies["MiCookie"];
 }
@@ -17,18 +17,28 @@
     <link rel="stylesheet" href="~/Content/NuevaFoto.css" />
     <link rel="stylesheet" href="~/Content/Carrusel.css" />
 
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-Lfjzt+1oR6k5ZSJQkmzURJs7GwzPXoxY7Eq3V8SmVmOMeRuLToj6kGak+2tx76dsh8IerFvKmvlGAGqDvRvU9g==" crossorigin="anonymous" />
 
 
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
+    <link rel="stylesheet" href="~/Content/menu-responsive.css">
+
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-inverse navbar-fixed-top" id="main-navbar">
         <div class="container">
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav" style="float: left;">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
                     <li>@Html.ActionLink("Todas las Fotos", "Index", "Fotos")</li>
                     <li>@Html.ActionLink("Carrusel", "Carrusel", "Fotos")</li>
@@ -44,14 +54,14 @@
                 </ul>
                 @if (Request.Cookies["MiCookie"] != null)
                 {
-                    <ul class="nav navbar-nav" style="float: right;">
+                    <ul class="nav navbar-nav navbar-right">
                         <li><a style="font-weight: bold; text-decoration: none">@Request.Cookies["MiCookie"]["usuario"]</a></li>
                         <li>@Html.ActionLink("Salir", "Logout", "Usuarios")</li>
                     </ul>
                 }
                 else
                 {
-                    <ul class="nav navbar-nav" style="float: right;">
+                    <ul class="nav navbar-nav navbar-right">
                         <li>@Html.ActionLink("Login", "Login", "Usuarios")</li>
                         <li>@Html.ActionLink("Registrarse", "Create", "Usuarios")</li>
                     </ul>

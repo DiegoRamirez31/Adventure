@@ -10,7 +10,7 @@ namespace Adventure_MVC.Controllers
 {
     public class HomeController : Controller
     {
-        private dbAventurasEntities dbEntities = new dbAventurasEntities();
+        private dbAventurasEntities1 dbEntities = new dbAventurasEntities1();
 
         public ActionResult Index()
         {

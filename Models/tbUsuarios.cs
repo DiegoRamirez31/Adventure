@@ -18,8 +18,8 @@ namespace Adventure_MVC.Models
         public tbUsuarios()
         {
             this.tbComentarios = new HashSet<tbComentarios>();
-            this.tbFotos = new HashSet<tbFotos>();
             this.tbFavoritos = new HashSet<tbFavoritos>();
+            this.tbFotos = new HashSet<tbFotos>();
         }
     
         public int id { get; set; }
@@ -31,9 +31,9 @@ namespace Adventure_MVC.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbComentarios> tbComentarios { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tbFavoritos> tbFavoritos { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbFotos> tbFotos { get; set; }
         public virtual tbRoles tbRoles { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tbFavoritos> tbFavoritos { get; set; }
     }
 }
